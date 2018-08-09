@@ -8,10 +8,17 @@ import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 
-fun main(args: Array<String>) {
+object Hello {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        start()
+    }
+}
+
+fun start() {
     embeddedServer(
             Netty,
-            watchPaths = listOf("kotlin-ktor-auto-reload-demo"),
+            watchPaths = listOf("kotlin-ktor-auto-reload-by-gradle-demo"),
             port = 8080,
             module = Application::routes
     ).apply {
